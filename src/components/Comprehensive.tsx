@@ -56,10 +56,9 @@ export default function Comprehensive() {
         textAlign="left"
         justify="center"
         alignItems="center"
-        width={{ base: '100%', md: '80%', lg: '60%' }}
+        width={{ base: '100%', md: '90%' }}
         spacing={{ base: 4, lg: 10 }}
         py={10}
-        px={20}
         margin="0 auto"
       >
         <Box
@@ -71,7 +70,7 @@ export default function Comprehensive() {
           height="100%"
           transition="transform 0.2s"
           _hover={{
-            transform: 'translateY(-8px)',
+            transform: 'translateY(-4px)',
           }}
           boxShadow="0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)"
         >
@@ -107,12 +106,18 @@ export default function Comprehensive() {
             </HStack>
           </VStack>
           <Button
-            width="100%"
-            variant="solid"
-            colorScheme="blue.950"
-            alignSelf="center"
-            // color="white"
             rightIcon={<FiArrowRight />}
+            variant="solid"
+            width="100%"
+            rounded={'md'}
+            fontWeight="400"
+            px={5}
+            py={3}
+            bg="#1A365D"
+            color="white"
+            _hover={{
+              bg: '#1A366E',
+            }}
           >
             Start Practice Quiz
           </Button>
@@ -126,7 +131,7 @@ export default function Comprehensive() {
           height="100%"
           transition="transform 0.2s"
           _hover={{
-            transform: 'translateY(-8px)',
+            transform: 'translateY(-4px)',
           }}
           boxShadow="0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)"
         >
@@ -162,10 +167,21 @@ export default function Comprehensive() {
             </HStack>
           </VStack>
           <Button
-            width="80%"
-            variant="outline"
-            color="white"
-            colorScheme="blue.950"
+            bg={'white'}
+            width="100%"
+            rounded={'md'}
+            fontWeight="400"
+            border="0.5px solid #90CDF4"
+            px={5}
+            py={3}
+            _hover={{
+              bg: '#EBF8FF',
+            }}
+            // width="80%"
+            // variant="outline"
+            // color="black"
+            // border="1px solid red"
+            // alignSelf="center"
             // _hover={{ bg: 'blue.800' }}
             rightIcon={<FiArrowRight />}
           >
