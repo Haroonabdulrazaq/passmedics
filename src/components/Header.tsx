@@ -1,3 +1,4 @@
+'use client';
 import { Box, Container, Flex, Heading, Spacer } from '@chakra-ui/react';
 
 const Header = () => {
@@ -13,7 +14,7 @@ const Header = () => {
         zIndex={10}
         display="flex"
         alignItems="center"
-        paddingX={{ base: 4, md: 10, lg: 96 }}
+        paddingX={{ sm: 4, md: 56, lg: 96 }}
       >
         <Heading
           as="h6"
