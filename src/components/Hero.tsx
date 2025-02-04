@@ -1,6 +1,14 @@
 'use client';
 
-import { Box, Heading, Text, Button, Stack, Spacer } from '@chakra-ui/react';
+import {
+  Box,
+  Heading,
+  Text,
+  Button,
+  Stack,
+  Spacer,
+  Link,
+} from '@chakra-ui/react';
 import { FiArrowRight } from 'react-icons/fi';
 import { FiUsers, FiStar, FiTarget } from 'react-icons/fi';
 import {} from 'react-icons/fi';
@@ -9,7 +17,7 @@ const Hero = () => {
   return (
     <Box
       width="100%"
-      height="60vh"
+      minHeight="60vh"
       bgGradient={'linear(to-r, #eff6ff, #faf5ff)'}
       alignContent={'center'}
     >
@@ -42,45 +50,47 @@ const Hero = () => {
           clinical cases, and <br /> intelligent study tools.
         </Text>
         <Stack
-          direction={'row'}
+          direction={{ base: 'column', md: 'row' }}
           spacing={{ base: 3, lg: 6 }}
           align={'center'}
           alignSelf={'center'}
           position={'relative'}
         >
-          <Button
-            variant="ghost"
-            bg="#2563EB"
-            width="100%"
-            color="white"
-            fontWeight="400"
-            rounded={'md'}
-            px={5}
-            py={3}
-            _hover={{
-              bg: '#2563FC',
-            }}
-            rightIcon={<FiArrowRight />}
-          >
-            Practice quiz
-          </Button>
-          <Button
-            // variant={'outline'}
-            // colorScheme={'blue.400'}
-            bg={'white'}
-            width="100%"
-            rounded={'md'}
-            fontWeight="400"
-            border="0.5px solid #90CDF4"
-            px={5}
-            py={3}
-            _hover={{
-              bg: '#EBF8FF',
-            }}
-            rightIcon={<FiArrowRight />}
-          >
-            Clinical Case
-          </Button>
+          <Link href="/quiz">
+            <Button
+              variant="ghost"
+              bg="#2563EB"
+              width="100%"
+              color="white"
+              fontWeight="400"
+              rounded={'md'}
+              px={5}
+              py={3}
+              _hover={{
+                bg: '#2563FC',
+              }}
+              rightIcon={<FiArrowRight />}
+            >
+              Practice quiz
+            </Button>
+          </Link>
+          <Link href="/clinical-cases">
+            <Button
+              bg={'white'}
+              width="100%"
+              rounded={'md'}
+              fontWeight="400"
+              border="0.5px solid #90CDF4"
+              px={5}
+              py={3}
+              _hover={{
+                bg: '#EBF8FF',
+              }}
+              rightIcon={<FiArrowRight />}
+            >
+              Clinical Case
+            </Button>
+          </Link>
         </Stack>
         <Stack
           direction={'row'}

@@ -76,7 +76,7 @@ export default function Comprehensive() {
         >
           <Box
             p={3}
-            bg="#eff6ff"
+            bg="blue.50"
             rounded={'lg'}
             display="inline-block"
             borderRadius="md"
@@ -137,7 +137,7 @@ export default function Comprehensive() {
         >
           <Box
             p={3}
-            bg="#eff6ff"
+            bg="blue.50"
             display="inline-block"
             rounded={'lg'}
             borderRadius="md"

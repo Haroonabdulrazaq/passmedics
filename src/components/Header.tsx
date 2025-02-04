@@ -1,5 +1,5 @@
 'use client';
-import { Box, Flex, Heading } from '@chakra-ui/react';
+import { Box, Flex, Heading, Link, Text } from '@chakra-ui/react';
 
 const Header = () => {
   return (
@@ -30,7 +30,9 @@ const Header = () => {
           color="#3B82F6"
           fontSize={{ base: 'md', sm: 'lg', md: 'xl' }}
         >
-          PassMedics
+          <Link href="/">
+            <Text>PassMedics</Text>
+          </Link>
         </Heading>
       </Flex>
     </Box>
