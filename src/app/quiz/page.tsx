@@ -56,7 +56,7 @@ const Quiz = () => {
 
   return (
     <>
-      <Box mt="8vh" px={4} pb={8}>
+      <Box mt="8vh" px={'6%'} pb={8}>
         <VStack spacing={3} mt={20} mb={10} textAlign="center">
           <Heading as="h1" size="xl">
             Medical Quiz
@@ -67,15 +67,18 @@ const Quiz = () => {
           </Text>
         </VStack>
 
-        <SimpleGrid columns={{ base: 1, md: 2 }} spacing={8} mb={10}>
+        <SimpleGrid
+          columns={{ base: 1, lg: 2 }}
+          width={{
+            base: '100%',
+            lg: '60%',
+          }}
+          spacing={8}
+          margin="0 auto"
+          mb={10}
+        >
           {features.map((feature, index) => (
-            <Flex
-              key={index}
-              p={5}
-              shadow="md"
-              borderWidth="1px"
-              borderRadius="lg"
-            >
+            <Flex key={index} p={5} shadow="md" borderRadius="lg">
               <Box
                 bg={feature.bgColor}
                 p={3}

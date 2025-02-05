@@ -39,7 +39,7 @@ const StartQuiz = () => {
     setSelectedOption('');
     setQuestionNumber((prevQuestion: number) => {
       if (prevQuestion == 9) {
-        router.push('/quiz');
+        router.push('/quiz/summary');
         return 0;
       }
 

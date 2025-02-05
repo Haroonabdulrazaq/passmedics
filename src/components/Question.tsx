@@ -131,7 +131,7 @@ const Question = ({
           isDisabled={!selectedOption}
           onClick={handleNextQuestion}
         >
-          Next Question
+          {questionNumber == 9 ? 'Finish Quiz' : 'Next Question'}
         </Button>
       </Flex>
     </Box>
