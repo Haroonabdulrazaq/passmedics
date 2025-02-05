@@ -1,3 +1,4 @@
+'use client';
 import React from 'react';
 import {
   Box,
@@ -11,9 +12,17 @@ import {
 } from '@chakra-ui/react';
 import { questions } from '@/lib/questions';
 import { BsCheck2Circle } from 'react-icons/bs';
+import { ImCancelCircle } from 'react-icons/im';
+import { useAppSelector } from '@/redux/store';
 
 const Summary = () => {
-  let correctAnswers: number = 8;
+  const { question } = useAppSelector((state) => state.question);
+  const myQuestions = question[question.length - 1];
+  console.log('***********QuestionsState***************');
+  console.log(myQuestions);
+  let correctAnswers: number =
+    myQuestions.answers.reduce((acc, curr) => (curr ? acc + 1 : acc), 0) || 0;
+
   const scorePercentage = (correctAnswers / questions.length) * 100;
   const isPassing = scorePercentage >= 70;
 
@@ -90,13 +99,33 @@ const Summary = () => {
                 </Tag>
               </HStack>
               <Text>{question.question}</Text>
-              <Text color="green.400">
-                <BsCheck2Circle color="green" /> Your Answer:{' '}
-                {question.options
-                  .filter((option) => option.isCorrect)
-                  .map((option) => option.label)
-                  .join(', ')}
-              </Text>
+              <HStack>
+                {myQuestions.answers[index] ? (
+                  <BsCheck2Circle color="green" />
+                ) : (
+                  <ImCancelCircle color="red" />
+                )}
+                <Text color="black"> Your Answer:</Text>
+                <Text color={myQuestions.answers[index] ? 'green' : 'red'}>
+                  {question.options
+                    .filter(
+                      (option) =>
+                        option.value === myQuestions.selecetdOptions[index]
+                    )
+                    .map((option) => option.label)
+                    .join(', ')}
+                </Text>
+              </HStack>
+              <HStack>
+                <Text color="black"> Correct Answer </Text>
+                <Text color="green">
+                  {': '}
+                  {question.options
+                    .filter((option) => option.isCorrect)
+                    .map((option) => option.label)
+                    .join(', ')}
+                </Text>{' '}
+              </HStack>
             </Box>
           ))}
         </Box>

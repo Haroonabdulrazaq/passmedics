@@ -7,6 +7,7 @@ type questionProps = {
   id: String;
   questionNumber: number[];
   answers: boolean[];
+  selecetdOptions: String[];
 };
 
 const initialState: initialStateProps = {

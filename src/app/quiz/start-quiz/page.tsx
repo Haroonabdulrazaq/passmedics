@@ -21,6 +21,7 @@ import { v4 as uuidv4 } from 'uuid';
 
 const StartQuiz = () => {
   const [selectedOption, setSelectedOption] = useState<string>('');
+  const [selectedOptions, setSelectedOptions] = useState<string[]>([]);
   const [questionNumber, setQuestionNumber] = useState<number>(0);
   const { isOpen, onOpen, onClose } = useDisclosure();
   const [selectedAnswers, setSelectedAnswers] = useState<boolean[]>([]);
@@ -53,12 +54,14 @@ const StartQuiz = () => {
 
     const newSelectedAnswer = isCorrect?.value === selectedOption ?? false;
     const newSelectedQuestionNum = questionNumber;
+    const newSelectdOptions = selectedOption;
 
     setSelectedAnswers((prevAnswers) => [...prevAnswers, newSelectedAnswer]);
     setSelectedQuestionsNum((prevQuestions) => [
       ...prevQuestions,
       newSelectedQuestionNum,
     ]);
+    setSelectedOptions((prevOptions) => [...prevOptions, newSelectdOptions]);
 
     setQuestionNumber((prevQuestion: number) => {
       const nextQuestion = prevQuestion + 1;
@@ -68,6 +71,7 @@ const StartQuiz = () => {
           id: uuidv4(),
           questionNumber: [...selectedQuestionsNum, newSelectedQuestionNum],
           answers: [...selectedAnswers, newSelectedAnswer],
+          selecetdOptions: [...selectedOptions, newSelectdOptions],
         };
 
         dispatch(handleAnswers([questionData]));
