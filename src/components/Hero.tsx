@@ -39,6 +39,7 @@ const Hero = () => {
           <Text
             as={'span'}
             color="#2563EB"
+            lineHeight="110%"
             fontWeight="bold"
             fontSize={{ base: '2xl', sm: '4xl', md: '6xl' }}
           >

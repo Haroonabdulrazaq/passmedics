@@ -20,7 +20,7 @@ const Header = () => {
       <Flex
         height="100%"
         alignItems="center"
-        maxW="1440px"
+        // maxW="1440px"
         mx="auto"
         px={{ base: 4, sm: 6, lg: 8, xl: 60 }}
       >

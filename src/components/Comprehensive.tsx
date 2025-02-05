@@ -14,6 +14,7 @@ import {
   Button,
   Spacer,
   Container,
+  Link,
 } from '@chakra-ui/react';
 import { FaCheckCircle } from 'react-icons/fa';
 import { FiTarget, FiArrowRight } from 'react-icons/fi';
@@ -59,6 +60,7 @@ export default function Comprehensive() {
         width={{ base: '100%', md: '90%' }}
         spacing={{ base: 4, lg: 10 }}
         py={10}
+        px={4}
         margin="0 auto"
       >
         <Box
@@ -66,7 +68,7 @@ export default function Comprehensive() {
           p={8}
           borderRadius="lg"
           border="2px"
-          borderColor="blue.200"
+          borderColor="#DBEAFE"
           height="100%"
           transition="transform 0.2s"
           _hover={{
@@ -105,29 +107,31 @@ export default function Comprehensive() {
               <Text>Auto-generated flashcards</Text>
             </HStack>
           </VStack>
-          <Button
-            rightIcon={<FiArrowRight />}
-            variant="solid"
-            width="100%"
-            rounded={'md'}
-            fontWeight="400"
-            px={5}
-            py={3}
-            bg="#1A365D"
-            color="white"
-            _hover={{
-              bg: '#1A366E',
-            }}
-          >
-            Start Practice Quiz
-          </Button>
+          <Link href="quiz">
+            <Button
+              rightIcon={<FiArrowRight />}
+              variant="solid"
+              width="100%"
+              rounded={'md'}
+              fontWeight="400"
+              px={5}
+              py={3}
+              bg="#1A365D"
+              color="white"
+              _hover={{
+                bg: '#1A366E',
+              }}
+            >
+              Start Practice Quiz
+            </Button>
+          </Link>
         </Box>
         <Box
           flex={1}
           p={8}
           borderRadius="lg"
           border="2px"
-          borderColor="blue.200"
+          borderColor="#DBEAFE"
           height="100%"
           transition="transform 0.2s"
           _hover={{
@@ -166,27 +170,23 @@ export default function Comprehensive() {
               <Text>Expert feedback</Text>
             </HStack>
           </VStack>
-          <Button
-            bg={'white'}
-            width="100%"
-            rounded={'md'}
-            fontWeight="400"
-            border="0.5px solid #90CDF4"
-            px={5}
-            py={3}
-            _hover={{
-              bg: '#EBF8FF',
-            }}
-            // width="80%"
-            // variant="outline"
-            // color="black"
-            // border="1px solid red"
-            // alignSelf="center"
-            // _hover={{ bg: 'blue.800' }}
-            rightIcon={<FiArrowRight />}
-          >
-            Explore Cases
-          </Button>
+          <Link href="clinical-cases">
+            <Button
+              bg={'white'}
+              width="100%"
+              rounded={'md'}
+              fontWeight="400"
+              border="0.5px solid #90CDF4"
+              px={5}
+              py={3}
+              _hover={{
+                bg: '#EBF8FF',
+              }}
+              rightIcon={<FiArrowRight />}
+            >
+              Try Clinical Cases
+            </Button>
+          </Link>
         </Box>
       </Stack>
     </Box>

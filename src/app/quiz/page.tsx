@@ -9,6 +9,7 @@ import {
   Heading,
   Button,
   HStack,
+  Stack,
 } from '@chakra-ui/react';
 import { FiTarget } from 'react-icons/fi';
 import { LuBrain } from 'react-icons/lu';
@@ -55,7 +56,7 @@ const Quiz = () => {
 
   return (
     <>
-      <Box mt="8vh" px={4}>
+      <Box mt="8vh" px={4} pb={8}>
         <VStack spacing={3} mt={20} mb={10} textAlign="center">
           <Heading as="h1" size="xl">
             Medical Quiz
@@ -97,14 +98,19 @@ const Quiz = () => {
           ))}
         </SimpleGrid>
 
-        <HStack spacing={4} justify="center">
-          <Link href="/quiz">
+        <Stack
+          spacing={4}
+          justify="center"
+          direction={{ base: 'column', md: 'row' }}
+        >
+          <Link href="/quiz/start-quiz">
             <Button
               variant="ghost"
               bg="#2563EB"
               width="100%"
               color="white"
               fontWeight="400"
+              cursor="pointer"
               rounded={'md'}
               px={8}
               py={5}
@@ -116,10 +122,11 @@ const Quiz = () => {
             </Button>
           </Link>
           <Button
-            leftIcon={<FaStethoscope />}
+            leftIcon={<FaStethoscope color="#2563EB" />}
             bg={'white'}
             rounded={'md'}
             fontWeight="400"
+            color="#2563EB"
             border="0.5px solid #90CDF4"
             px={5}
             py={3}
@@ -129,8 +136,13 @@ const Quiz = () => {
           >
             Try Clinic Cases
           </Button>
-        </HStack>
-        <Text textAlign="center" my="16">
+        </Stack>
+        <Text
+          textAlign="center"
+          my="8"
+          color="#4B5563"
+          fontSize={{ base: 'md' }}
+        >
           Want a more immersive experience? Try our clinical case simulations.
         </Text>
       </Box>
