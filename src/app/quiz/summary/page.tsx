@@ -39,7 +39,7 @@ const Summary = () => {
           {correctAnswers} of {questions.length} is correct
         </Text>
         <Text fontSize="2xl" fontWeight="bold" margin="0 auto">
-          {isPassing ? '🎉 Congratulations!' : '💪 Keep practicing!'}
+          {isPassing ? 'Congratulations! 🎉' : 'Keep practicing! 💪'}
         </Text>
         <Text fontSize="lg" margin="0 auto">
           {isPassing
