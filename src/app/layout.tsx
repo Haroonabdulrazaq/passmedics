@@ -1,7 +1,7 @@
-import type { Metadata } from 'next';
 import { Providers } from '@/app/provider';
 import { fonts } from './fonts';
 import Header from '@/components/Header';
+import ReduxProvider from '@/redux/provider';
 
 export default function RootLayout({
   children,
@@ -11,10 +11,12 @@ export default function RootLayout({
   return (
     <html lang="en" className={fonts.poppins.variable}>
       <body>
-        <Providers>
-          <Header />
-          {children}
-        </Providers>
+        <ReduxProvider>
+          <Providers>
+            <Header />
+            {children}
+          </Providers>
+        </ReduxProvider>
       </body>
     </html>
   );

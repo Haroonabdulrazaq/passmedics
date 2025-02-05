@@ -13,13 +13,24 @@ import {
 } from '@chakra-ui/react';
 import { useRouter } from 'next/navigation';
 import Question from '@/components/Question';
+import { questions } from '@/lib/questions';
+import { handleAnswers } from '@/redux/features/questionSlice';
+import { useDispatch } from 'react-redux';
+import { AppDispatch } from '@/redux/store';
+import { v4 as uuidv4 } from 'uuid';
 
 const StartQuiz = () => {
   const [selectedOption, setSelectedOption] = useState<string>('');
   const [questionNumber, setQuestionNumber] = useState<number>(0);
   const { isOpen, onOpen, onClose } = useDisclosure();
+  const [selectedAnswers, setSelectedAnswers] = useState<boolean[]>([]);
+  const [selectedQuestionsNum, setSelectedQuestionsNum] = useState<number[]>(
+    []
+  );
+
   const [timer, setTimer] = useState(600);
   const router = useRouter();
+  const dispatch = useDispatch<AppDispatch>();
 
   useEffect(() => {
     const countdown = setInterval(() => {
@@ -36,15 +47,38 @@ const StartQuiz = () => {
   }, []);
 
   const handleNextQuestion = () => {
-    setSelectedOption('');
+    let isCorrect = questions[questionNumber].options.find(
+      (option) => option.isCorrect === true
+    );
+
+    const newSelectedAnswer = isCorrect?.value === selectedOption ?? false;
+    const newSelectedQuestionNum = questionNumber;
+
+    setSelectedAnswers((prevAnswers) => [...prevAnswers, newSelectedAnswer]);
+    setSelectedQuestionsNum((prevQuestions) => [
+      ...prevQuestions,
+      newSelectedQuestionNum,
+    ]);
+
     setQuestionNumber((prevQuestion: number) => {
-      if (prevQuestion == 9) {
+      const nextQuestion = prevQuestion + 1;
+
+      if (prevQuestion === 9) {
+        const questionData = {
+          id: uuidv4(),
+          questionNumber: [...selectedQuestionsNum, newSelectedQuestionNum],
+          answers: [...selectedAnswers, newSelectedAnswer],
+        };
+
+        dispatch(handleAnswers([questionData]));
         router.push('/quiz/summary');
         return 0;
       }
 
-      return prevQuestion + 1;
+      return nextQuestion;
     });
+
+    setSelectedOption('');
   };
 
   const handleExit = () => {

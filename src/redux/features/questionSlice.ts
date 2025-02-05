@@ -1,18 +1,28 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 type initialStateProps = {
-  answers: number[];
+  question: questionProps[];
+};
+
+type questionProps = {
+  id: String;
+  questionNumber: number[];
+  answers: boolean[];
 };
 
 const initialState: initialStateProps = {
-  answers: [],
+  question: [],
 };
 
-const questions = createSlice({
+const questionSlice = createSlice({
   name: 'questions',
   initialState,
   reducers: {
-    storeAnswer: (state, action: PayloadAction<number>) => {
-      state.answers.push(action.payload);
+    handleAnswers: (state, action: PayloadAction<questionProps[]>) => {
+      state.question = action.payload;
     },
   },
 });
+
+export const { handleAnswers } = questionSlice.actions;
+
+export default questionSlice.reducer;
