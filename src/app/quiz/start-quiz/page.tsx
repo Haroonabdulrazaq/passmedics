@@ -71,7 +71,7 @@ const StartQuiz = () => {
           id: uuidv4(),
           questionNumber: [...selectedQuestionsNum, newSelectedQuestionNum],
           answers: [...selectedAnswers, newSelectedAnswer],
-          selecetdOptions: [...selectedOptions, newSelectdOptions],
+          selectedOptions: [...selectedOptions, newSelectdOptions],
         };
 
         dispatch(handleAnswers([questionData]));

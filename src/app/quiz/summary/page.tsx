@@ -18,13 +18,25 @@ import { useAppSelector } from '@/redux/store';
 const Summary = () => {
   const { question } = useAppSelector((state) => state.question);
   const myQuestions = question[question.length - 1];
-  console.log('***********QuestionsState***************');
-  console.log(myQuestions);
+
   let correctAnswers: number =
     myQuestions.answers.reduce((acc, curr) => (curr ? acc + 1 : acc), 0) || 0;
 
   const scorePercentage = (correctAnswers / questions.length) * 100;
   const isPassing = scorePercentage >= 70;
+
+  const [filter, setFilter] = React.useState('all');
+
+  const filteredQuestions = () => {
+    if (filter === 'correct') {
+      return questions.filter((_, index) => myQuestions.answers[index]);
+    } else if (filter === 'incorrect') {
+      return questions.filter(
+        (_, index) => myQuestions.answers[index] === false
+      );
+    }
+    return questions;
+  };
 
   return (
     <Box mt="8vh">
@@ -72,14 +84,16 @@ const Summary = () => {
             <Text fontWeight="bold">Detailed Question Review</Text>
             <Text fontWeight="bold">
               <ButtonGroup>
-                <Button>All</Button>
-                <Button>Correct</Button>
-                <Button>Incorrect</Button>
+                <Button onClick={() => setFilter('all')}>All</Button>
+                <Button onClick={() => setFilter('correct')}>Correct</Button>
+                <Button onClick={() => setFilter('incorrect')}>
+                  Incorrect
+                </Button>
               </ButtonGroup>
             </Text>
           </HStack>
 
-          {questions.map((question, index) => (
+          {filteredQuestions().map((question, index) => (
             <Box
               key={index}
               border="1px solid #e5e7eb"
@@ -100,17 +114,27 @@ const Summary = () => {
               </HStack>
               <Text>{question.question}</Text>
               <HStack>
-                {myQuestions.answers[index] ? (
+                {myQuestions.answers[question.metaData.questionNumber - 1] ==
+                true ? (
                   <BsCheck2Circle color="green" />
                 ) : (
                   <ImCancelCircle color="red" />
                 )}
                 <Text color="black"> Your Answer:</Text>
-                <Text color={myQuestions.answers[index] ? 'green' : 'red'}>
+                <Text
+                  color={
+                    myQuestions.answers[question.metaData.questionNumber - 1]
+                      ? 'green'
+                      : 'red'
+                  }
+                >
                   {question.options
                     .filter(
                       (option) =>
-                        option.value === myQuestions.selecetdOptions[index]
+                        option.value ===
+                        myQuestions.selectedOptions[
+                          question.metaData.questionNumber - 1
+                        ]
                     )
                     .map((option) => option.label)
                     .join(', ')}
