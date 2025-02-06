@@ -52,7 +52,7 @@ const StartQuiz = () => {
       (option) => option.isCorrect === true
     );
 
-    const newSelectedAnswer = isCorrect?.value === selectedOption ?? false;
+    const newSelectedAnswer = isCorrect?.value === selectedOption || false;
     const newSelectedQuestionNum = questionNumber;
     const newSelectdOptions = selectedOption;
 
