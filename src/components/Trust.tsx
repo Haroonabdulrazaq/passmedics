@@ -138,7 +138,7 @@ export default function Trust() {
               </TestimonialHeading>
               <TestimonialText>
                 The clinical cases are incredibly realistic and challenging.
-                They've helped me develop a structured approach to patient
+                They have helped me develop a structured approach to patient
                 management.
               </TestimonialText>
               <TestimonialAvatar
