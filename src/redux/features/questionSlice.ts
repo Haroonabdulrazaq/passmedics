@@ -4,7 +4,7 @@ type initialStateProps = {
 };
 
 type questionProps = {
-  id: String;
+  id: string;
   questionNumber: number[];
   answers: boolean[];
   selectedOptions: string[];
