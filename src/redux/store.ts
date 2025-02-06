@@ -10,11 +10,11 @@ const persistConfig = {
   version: 1,
   storage,
 };
-const reducer = combineReducers({
+const rootReducer = combineReducers({
   question: questionReducer,
 });
 
-const persistedReducer = persistReducer(persistConfig, reducer);
+const persistedReducer = persistReducer(persistConfig, rootReducer);
 
 export const store = configureStore({
   reducer: persistedReducer,
