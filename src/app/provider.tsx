@@ -3,7 +3,6 @@
 import { ChakraProvider } from '@chakra-ui/react';
 import { extendTheme } from '@chakra-ui/react';
 import { fonts } from './fonts';
-import { color } from 'framer-motion';
 
 const theme = extendTheme({
   fonts: {

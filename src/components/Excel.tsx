@@ -45,7 +45,7 @@ const Excel = () => {
           </Link>
 
           <Link
-            href="#"
+            href="/clinical-cases"
             display="flex"
             alignItems="center"
             bg="whiteAlpha.200"

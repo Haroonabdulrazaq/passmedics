@@ -1,17 +1,9 @@
 'use client';
 
-import {
-  Box,
-  Heading,
-  Text,
-  Button,
-  Stack,
-  Spacer,
-  Link,
-} from '@chakra-ui/react';
+import { Box, Heading, Text, Button, Stack, Link, Tag } from '@chakra-ui/react';
 import { FiArrowRight } from 'react-icons/fi';
 import { FiUsers, FiStar, FiTarget } from 'react-icons/fi';
-import {} from 'react-icons/fi';
+import { GoShieldCheck } from 'react-icons/go';
 
 const Hero = () => {
   return (
@@ -28,9 +20,19 @@ const Hero = () => {
         py={{ base: 20, lg: 'lg' }}
         px={{ base: 20, lg: 'lg' }}
       >
+        <Tag
+          colorScheme="blue"
+          textAlign="center"
+          margin="0 auto"
+          fontWeight="200"
+          color="blue.500"
+        >
+          <GoShieldCheck />
+          <Text>Trusted by 10,000+ Medical Students</Text>
+        </Tag>
         <Heading
           fontWeight={600}
-          fontSize={{ base: '2xl', sm: '3xl', md: '4xl', lg: '5xl' }}
+          fontSize={{ base: '5xl', sm: '5xl', md: '4xl', lg: '5xl' }}
           lineHeight={'100%'}
           color={'blue.950'}
           mb={2}
@@ -41,7 +43,7 @@ const Hero = () => {
             color="#2563EB"
             lineHeight="110%"
             fontWeight="bold"
-            fontSize={{ base: '2xl', sm: '4xl', md: '6xl' }}
+            fontSize={{ base: '4xl', sm: '4xl', md: '6xl' }}
           >
             Confidence
           </Text>
