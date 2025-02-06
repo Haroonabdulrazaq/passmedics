@@ -1,5 +1,5 @@
 'use client';
-import React, { useEffect } from 'react';
+import React from 'react';
 import {
   Box,
   Text,
@@ -41,10 +41,6 @@ const Summary = () => {
     }
     return questions;
   };
-
-  useEffect(() => {
-    localStorage.setItem('questions', JSON.stringify(questions));
-  }, [questions]);
 
   return (
     <>
@@ -93,17 +89,6 @@ const Summary = () => {
               ? "You've demonstrated strong knowledge in this quiz. Review your answers below for additional learning."
               : "Don't worry, practice makes perfect. Review the explanations below to strengthen your understanding."}
           </Text>
-
-          <HStack justify="space-around">
-            <Box>
-              <Text fontWeight="bold">Topic Analysis</Text>
-              {/* Add logic to display strongest topics */}
-            </Box>
-            <Box>
-              <Text fontWeight="bold">Topic Performance</Text>
-              {/* Add logic to display performance */}
-            </Box>
-          </HStack>
 
           <Box>
             <HStack justify="space-between" my="8">
