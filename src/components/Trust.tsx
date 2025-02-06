@@ -112,9 +112,9 @@ export default function Trust() {
                 </Flex>
               </TestimonialHeading>
               <TestimonialText>
-                "The adaptive quizes and clinical cases have significantly
+                \"The adaptive quizes and clinical cases have significantly
                 improved my diagnostic reasoning. The auto-generated flashcards
-                are a game-changer!"
+                are a game-changer!\"
               </TestimonialText>
               <TestimonialAvatar
                 src={
@@ -137,9 +137,9 @@ export default function Trust() {
                 </Flex>
               </TestimonialHeading>
               <TestimonialText>
-                "The clinical cases are incredibly realistic and challenging.
+                \"The clinical cases are incredibly realistic and challenging.
                 They've helped me develop a structured approach to patient
-                management."
+                management.\"
               </TestimonialText>
               <TestimonialAvatar
                 src={
@@ -164,9 +164,9 @@ export default function Trust() {
                 </Flex>
               </TestimonialHeading>
               <TestimonialText>
-                "The combination of quizes and clinical cases provides a
+                \"The combination of quizes and clinical cases provides a
                 comprehensive learning experience. The progress tracking is
-                excellent."
+                excellent.\"
               </TestimonialText>
               <TestimonialAvatar
                 src={

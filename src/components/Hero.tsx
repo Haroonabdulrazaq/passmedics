@@ -1,14 +1,6 @@
 'use client';
 
-import {
-  Box,
-  Heading,
-  Text,
-  Button,
-  Stack,
-  Spacer,
-  Link,
-} from '@chakra-ui/react';
+import { Box, Heading, Text, Button, Stack, Link } from '@chakra-ui/react';
 import { FiArrowRight } from 'react-icons/fi';
 import { FiUsers, FiStar, FiTarget } from 'react-icons/fi';
 import {} from 'react-icons/fi';

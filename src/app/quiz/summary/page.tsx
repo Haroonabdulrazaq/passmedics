@@ -20,13 +20,10 @@ import Footer from '@/components/Footer';
 
 const Summary = () => {
   const { question } = useAppSelector((state) => state.question);
-  console.log('+++++++++++++++++++');
-  console.log(question);
-  console.log('+++++++++++++++++++');
 
   const myQuestions = question[question.length - 1];
 
-  let correctAnswers: number =
+  const correctAnswers: number =
     myQuestions.answers.reduce((acc, curr) => (curr ? acc + 1 : acc), 0) || 0;
 
   const scorePercentage = (correctAnswers / questions.length) * 100;
