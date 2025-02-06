@@ -7,39 +7,12 @@ import {
   Heading,
   Text,
   VStack,
-  useColorModeValue,
-  List,
-  ListItem,
-  ListIcon,
   Button,
-  Spacer,
-  Container,
   Link,
 } from '@chakra-ui/react';
 import { FaCheckCircle } from 'react-icons/fa';
 import { FiTarget, FiArrowRight } from 'react-icons/fi';
 import { FaStethoscope } from 'react-icons/fa';
-
-interface Props {
-  children: React.ReactNode;
-}
-
-function PriceWrapper(props: Props) {
-  const { children } = props;
-
-  return (
-    <Box
-      mb={4}
-      shadow="base"
-      borderWidth="1px"
-      alignSelf={{ base: 'center', lg: 'flex-start' }}
-      borderColor={useColorModeValue('gray.200', 'gray.500')}
-      borderRadius={'xl'}
-    >
-      {children}
-    </Box>
-  );
-}
 
 export default function Comprehensive() {
   return (

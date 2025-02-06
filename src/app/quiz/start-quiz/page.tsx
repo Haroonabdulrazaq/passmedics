@@ -48,11 +48,11 @@ const StartQuiz = () => {
   }, []);
 
   const handleNextQuestion = () => {
-    let isCorrect = questions[questionNumber].options.find(
+    const isCorrect = questions[questionNumber].options.find(
       (option) => option.isCorrect === true
     );
 
-    const newSelectedAnswer = isCorrect?.value === selectedOption ?? false;
+    const newSelectedAnswer = isCorrect?.value === selectedOption || false;
     const newSelectedQuestionNum = questionNumber;
     const newSelectdOptions = selectedOption;
 

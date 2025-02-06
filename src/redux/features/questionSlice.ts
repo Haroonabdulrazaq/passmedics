@@ -4,10 +4,10 @@ type initialStateProps = {
 };
 
 type questionProps = {
-  id: String;
+  id: string;
   questionNumber: number[];
   answers: boolean[];
-  selectedOptions: String[];
+  selectedOptions: string[];
 };
 
 const initialState: initialStateProps = {

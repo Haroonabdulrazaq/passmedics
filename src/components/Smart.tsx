@@ -1,19 +1,21 @@
 'use client';
 
-import {
-  Box,
-  Heading,
-  Text,
-  Stack,
-  HStack,
-  VStack,
-  Container,
-} from '@chakra-ui/react';
+import { Box, Heading, Text, Stack, VStack, Container } from '@chakra-ui/react';
 import { LuBrain } from 'react-icons/lu';
 import { IoBulbOutline } from 'react-icons/io5';
 import { SlTrophy } from 'react-icons/sl';
 
-const FeatureCard = ({ icon, bgColor, title, description }: any) => {
+const FeatureCard = ({
+  icon,
+  bgColor,
+  title,
+  description,
+}: {
+  icon: JSX.Element;
+  bgColor: string;
+  title: string;
+  description: string;
+}) => {
   return (
     <Box
       p={6}

@@ -8,7 +8,6 @@ import {
   VStack,
   Heading,
   Button,
-  HStack,
   Stack,
 } from '@chakra-ui/react';
 import { FiTarget } from 'react-icons/fi';
